@@ -1,0 +1,35 @@
+/*
+ * @lc app=leetcode.cn id=3 lang=javascript
+ *
+ * [3] 无重复字符的最长子串
+ */
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+  let ans = 0
+  for (let i = 0; i < s.length; i++) {
+    for (let j = i+1; j <= s.length; j++) {
+      if (allUnique(s, i, j)) {
+        ans = Math.max(ans, j - i)
+      }
+    }
+  }
+  return ans
+};
+
+var allUnique = function(str, startIndex, endIndex) {
+  const subStr = str.substring(startIndex, endIndex)
+  const dict = {}
+  for (let i = 0; i < subStr.length; i++) {
+    const char = subStr[i];
+    if (char in dict) {
+      return false
+    } else {
+      dict[char] = true
+    }
+  }
+  return true
+}
+
