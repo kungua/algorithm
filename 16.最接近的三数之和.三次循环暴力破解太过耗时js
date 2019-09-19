@@ -1,0 +1,33 @@
+/*
+ * @lc app=leetcode.cn id=16 lang=javascript
+ *
+ * [16] 最接近的三数之和
+ */
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var threeSumClosest = function(nums, target) {
+  let diff = null;
+  let dict = {};
+  // nums.sort()
+  for (let i = 0; i < nums.length - 2; i++) {
+    const num1 = nums[i];
+    for (let j = i + 1; j < nums.length - 1; j++) {
+      const num2 = nums[j];
+      for (let k = j + 1; k < nums.length; k++) {
+        const num3 = nums[k];
+        const sum = num1 + num2 + num3;
+        const newDiff = Math.abs(sum - target);
+        dict[newDiff] = sum;
+        if (diff === null) {
+          diff = newDiff;
+        } else {
+          diff = newDiff < diff ? newDiff : diff;
+        }
+      }
+    }
+  }
+  return dict[diff];
+};
