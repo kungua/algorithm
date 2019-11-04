@@ -1,0 +1,21 @@
+/*
+ * @lc app=leetcode.cn id=96 lang=javascript
+ *
+ * [96] 不同的二叉搜索树
+ */
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var numTrees = function(n) {
+  // 中序遍历二叉查找树可得到一个关键字的有序序列
+  let result = 0;
+  if (n === 1 || n === 0) {
+    result = 1;
+  } else {
+    for (let i = 1; i <= n; i++) {
+      result += numTrees(i - 1) * numTrees(n - i);
+    }
+  }
+  return result;
+};
