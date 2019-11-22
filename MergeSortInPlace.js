@@ -1,6 +1,6 @@
 const arr = [6, 5, 3, 1, 8, 7, 2, 4]
 const arr1 = [1, 3, 5, 6, 2, 4, 7, 8]
-
+// 自顶向下
 // // 就地 merge
 // // merge 接收两个参数 第一个是 a 数组 第二个是 middle 整数、分割线
 // const merge = (a, middle) => {
