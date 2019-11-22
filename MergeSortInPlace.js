@@ -59,9 +59,10 @@ inplaceSort = (arr, start, end) => {
 }
 
 const arr3 = [1, 5, 3]
-// console.log(`数组 ${arr3} 排序后: `)
-// console.log(sort(arr3))
 console.log(`数组 ${arr} 排序后: `)
 console.log(sort(arr))
+
+// console.log(`数组 ${arr3} 排序后: `)
+// console.log(sort(arr3))
 // console.log(`数组 ${arr1} 排序后: `)
 // console.log(merge(arr1, 0, 4, 8))
